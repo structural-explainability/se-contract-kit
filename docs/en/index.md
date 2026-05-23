@@ -5,6 +5,7 @@ Structural Explainability contract repositories.
 
 ## Contents
 
+- [API Reference](./api.md)
 - [Architecture](./architecture.md)
 - [Command Reference](./commands.md)
 - [Contribution Workflow](./contribution-workflow.md)

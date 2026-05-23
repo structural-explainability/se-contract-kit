@@ -52,12 +52,12 @@ dev = [
     "pytest",
     "pytest-cov",
     "ruff",
-    "PyYAML", # WHY: Used for testing manifest parsing logic with YAML fixtures.
+    "twine", # WHY: Required for artifact validation (twine check dist/*).
 ]
 
 docs = [
     # REQ.DOCS.DEPS: External packages used to generate project documentation.
-    "zensical", # WHY: Link resolution fails with newer versions; pinning to a known working version.
+    "zensical",
 ]
 
 [project.scripts]
