@@ -94,7 +94,7 @@ jobs:
           fi
           echo "Artifact version matches tag."
 
-      - name: B5) Confirm wheel contains runtime schema artifact
+      - name: B5) Confirm wheel contains packaged repository manifest
         shell: bash
         run: |
           set -e
@@ -107,13 +107,11 @@ jobs:
 
           wheel = wheels[-1]
           names = zipfile.ZipFile(wheel).namelist()
-          matches = [name for name in names if name.endswith("manifest-schema.toml")]
+          expected = "se_contract_kit/_contract/MANIFEST.toml"
 
-          print(matches)
+          print([name for name in names if name.endswith("MANIFEST.toml")])
 
-          assert (
-              "se_manifest_schema/manifest-schema.toml" in names
-          ), "Wheel is missing se_manifest_schema/manifest-schema.toml"
+          assert expected in names, f"Wheel is missing {expected}"
           PY
 
       - name: B6) Sync dependencies after build
