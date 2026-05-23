@@ -1,0 +1,40 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# USAGE: See https://citation-file-format.github.io/ for details.
+
+cff-version: "1.2.0"
+type: software
+
+title: "Structural Explainability: Contract Kit for Persistent Disagreement in Information Systems"
+version: "0.1.0"
+date-released: "2026-05-23"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+
+repository-code: "https://github.com/structural-explainability/se-contract-kit"
+license: MIT
+
+abstract: >-
+  SE Contract Kit provides generic contract loading, dependency resolution,
+  artifact resolution, authority-local resolution, lockfile support, and
+  validation machinery for Structural Explainability contract repositories.
+
+keywords:
+  - structural-explainability
+  - se-contract-kit
+  - contract-resolution
+  - contract-validation
+  - authority-resolution
+  - dependency-resolution
+  - persistent-disagreement
+  - information-systems
+  - provenance
+  - auditability
+
+message: "If using this software, please cite it as described in this file."

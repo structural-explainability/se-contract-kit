@@ -1,0 +1,102 @@
+# ============================================================
+# MANIFEST.toml
+# ============================================================
+
+schema = "se-manifest-schema"
+schema_url = "https://github.com/structural-explainability/se-manifest-schema/blob/main/manifest-schema.toml"
+
+# === Identity ===
+
+[meta]
+purpose = "Declares the generic contract loading, resolution, and validation engine for Structural Explainability contract repositories."
+
+[repo]
+name = "se-contract-kit"
+org = "structural-explainability"
+class = "engine"
+kind = "contract-kit"
+status = "active"
+since = "2026"
+summary = "Generic contract loading, resolution, and validation machinery for Structural Explainability contract repositories."
+
+[layer]
+space = "application"
+role = "contract-engine"
+
+# === Dependencies ===
+
+[depends]
+required = [
+    "structural-explainability/se-manifest-schema@v0.4.1",
+]
+optional = []
+
+# === Provided artifacts ===
+
+[provides]
+artifacts = [
+    "contract-loading-engine",
+    "contract-resolution-engine",
+    "authority-resolution-engine",
+    "contract-validation-engine",
+    "contract-check-registry",
+    "contract-check-runner",
+    "contract-lockfile-support",
+]
+
+# === Scope ===
+
+[scope]
+includes = [
+    "generic contract declaration loading",
+    "generic dependency reference parsing",
+    "generic artifact resolution",
+    "authority-local artifact resolution",
+    "contract lockfile support",
+    "generic contract validation machinery",
+    "generic check registry and runner",
+    "generic validation result model",
+]
+
+excludes = [
+    "contract authority content",
+    "domain-specific contract content",
+    "domain-specific vocabularies",
+    "domain-specific subject mappings",
+    "domain-specific maturity claims",
+    "domain-specific record models",
+    "manifest schema authority",
+    "manifest validation rule ownership",
+    "claims of truth, correctness, legitimacy, obligation, or enforcement",
+    "analytics, inference, optimization, recommendation, or decision logic",
+    "storage formats",
+    "query interfaces",
+    "authentication",
+    "authorization",
+    "access control",
+    "cryptographic attestation",
+]
+
+# === Validation ===
+
+[validation]
+entrypoint = "uv run se-manifest validate-manifest --path MANIFEST.toml"
+strict_entrypoint = "uv run se-manifest validate-manifest --path MANIFEST.toml --strict"
+tag_entrypoint = "uv run se-manifest check-version --require-tag"
+
+# === Governance ===
+
+[naming]
+pattern = "se-contract-kit"
+
+[governance]
+authority = "structural-explainability"
+
+# === External references ===
+
+[citation]
+cff = "CITATION.cff"
+preferred = "software"
+
+[traceability]
+identifier_map = "none"
