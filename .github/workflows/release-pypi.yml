@@ -121,7 +121,7 @@ jobs:
         run: uv run pyright
 
       - name: C6) Validate built artifacts
-        run: uv run twine check dist/*
+        run: uvx twine check dist/*
 
       # === DEPLOY RELEASE AND DOCS ===
 

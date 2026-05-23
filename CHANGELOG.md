@@ -66,6 +66,7 @@ Follow these steps exactly when creating a new release.
 
 1.1. `CITATION.cff` - update `version` and `date-released`
 1.2. CHANGELOG.md: add section, move unreleased entries, update links
+1.3. Confirm `pyproject.toml` fallback version matches `CITATION.cff`
 
 ### Task 2. Validate
 
@@ -95,7 +96,36 @@ uv run python -m zensical build
 uvx pre-commit run --all-files
 ```
 
-### Task 3. Commit, tag, push
+### Task 3. Build and check artifacts locally
+
+```shell
+rm -rf dist
+uv build
+
+uvx twine check dist/*
+```
+
+For this repo, also confirm the wheel contains the packaged manifest:
+
+```shell
+python - <<'PY'
+import pathlib
+import zipfile
+
+wheels = list(pathlib.Path("dist").glob("*.whl"))
+assert wheels, "No wheel found"
+
+wheel = wheels[-1]
+names = zipfile.ZipFile(wheel).namelist()
+expected = "se_contract_kit/_contract/MANIFEST.toml"
+
+print([name for name in names if name.endswith("MANIFEST.toml")])
+
+assert expected in names, f"Wheel is missing {expected}"
+PY
+```
+
+### Task 4. Commit, push, tag
 
 ```shell
 git add -A
@@ -103,17 +133,17 @@ git commit -m "Prepare X.Y.Z"
 git push -u origin main
 ```
 
-Verify actions run on GitHub. After success:
+Verify GitHub Actions pass on `main`. After success:
 
 ```shell
 git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
 ```
 
-### Task 4. Verify tag consistency
+### Task 5. Verify tag consistency
 
 ```shell
-uv run python -m se_manifest_schema validate --strict --require-tag
+uv run se-manifest check-version --require-tag
 ```
 
 Confirms CITATION.cff version matches the pushed git tag.
