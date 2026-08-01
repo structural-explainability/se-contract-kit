@@ -45,7 +45,7 @@ jobs:
           # WHY: Invalidate cache only when locked dependencies change.
 
       - name: A3) Set up Python  ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           allow-prereleases: true
