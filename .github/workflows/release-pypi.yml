@@ -46,17 +46,17 @@ jobs:
       # === ASSEMBLE ===
 
       - name: A1) Checkout repository with full history and tags
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0   # WHY: hatch-vcs needs full history to derive version from tags.
           fetch-tags: true
           ref: ${{ github.ref }}
 
       - name: A2) Configure GitHub Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
       - name: A3) Install uv (with caching and uv.lock awareness)
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -126,7 +126,7 @@ jobs:
       # === DEPLOY RELEASE AND DOCS ===
 
       - name: D1) Create GitHub Release and upload artifacts
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
@@ -139,7 +139,7 @@ jobs:
           make_latest: true
 
       - name: D2) Publish to PyPI (Trusted Publishing)
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
 
       - name: D3) Build docs with Zensical
         run: |
@@ -159,9 +159,9 @@ jobs:
           fi
 
       - name: D5) Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: site
 
       - name: D6) Deploy to GitHub Pages
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
