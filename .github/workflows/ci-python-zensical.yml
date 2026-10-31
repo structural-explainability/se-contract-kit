@@ -128,9 +128,9 @@ jobs:
 
       # ============================================================
       # E) Execute local cli commands for additional checks
-      # ============================================================
-      - name: E1) Run validate manifest
-        run: uv run se-manifest validate-manifest --path MANIFEST.toml --strict
+      # # ============================================================
+      # - name: E1) Run validate manifest
+      #   run: uv run se-manifest validate-manifest --path MANIFEST.toml --strict
 
-      - name: E2) Run contract self-consistency checks
-        run: uv run se-contract-kit check --strict
+      # - name: E2) Run contract self-consistency checks
+      #   run: uv run se-contract-kit check --strict

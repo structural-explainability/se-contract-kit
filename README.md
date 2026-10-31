@@ -24,7 +24,6 @@
 
 [![CI](https://github.com/structural-explainability/se-contract-kit/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-contract-kit/actions/workflows/ci-python-zensical.yml)
 [![Docs-Deploy](https://github.com/structural-explainability/se-contract-kit/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-contract-kit/actions/workflows/deploy-zensical.yml)
-[![Release](https://github.com/structural-explainability/se-contract-kit/actions/workflows/release-pypi.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-contract-kit/actions/workflows/release-pypi.yml)
 [![Links](https://github.com/structural-explainability/se-contract-kit/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-contract-kit/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/structural-explainability/se-contract-kit/security)
 
