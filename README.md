@@ -1,4 +1,19 @@
-# SE Contract Kit
+# ARCHIVED: Retired Research Repository
+
+> **Status:** Retired October 2026. No longer maintained.
+>
+> This repository belongs to an earlier stage of the Structural Explainability
+> research program.
+>
+> It is preserved unchanged for historical reference.
+> No further development is planned.
+>
+> For current research, see
+> [Structural Explainability](https://github.com/structural-explainability).
+
+---
+
+## SE Contract Kit
 
 [![PyPI](https://img.shields.io/pypi/v/se-contract-kit?logo=pypi&label=pypi)](https://pypi.org/project/se-contract-kit/)
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://structural-explainability.github.io/se-contract-kit/)
