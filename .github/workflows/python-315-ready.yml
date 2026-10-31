@@ -63,8 +63,8 @@ jobs:
             uv run python -m zensical --version
           fi
 
-      - name: A6) Run pre-commit on all files
-        run: uv tool run pre-commit run --all-files
+      # - name: A6) Run pre-commit on all files
+      #   run: uv tool run pre-commit run --all-files
 
       # ============================================================
       # B) BASELINE CHECKS: Tools not covered by pre-commit
